@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:lc="clr-namespace:Shopping;assembly=Shopping"
+             mc:Ignorable="d"
+             x:Class="Shopping.MainPage">
+
+    <StackLayout Padding="10">
+        <Label Text="Let's go shopping" FontSize="Large"
+           HorizontalOptions="Center"/>
+        <CollectionView x:Name="MyCollectionView" Margin="10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    
+                    <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Name}" Grid.Column="0"/>
+                            <Label Text="{Binding Quantity}" Grid.Column="1"/>
+                            <Image WidthRequest="60" HeightRequest="60" Source="{lc:ImageResource Shopping.origo.png}" Grid.Column="2"/>
+                        </Grid>
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+        <Button Clicked="Button_OnClicked"></Button>
+    </StackLayout>
+
+</ContentPage>
